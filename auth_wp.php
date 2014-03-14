@@ -824,9 +824,11 @@ wp_initial_constants();
 wp_plugin_directory_constants();
 wp_cookie_constants();
 
-function logout_wp()
+function logout_wp($user_row)
 {
-    wp_logout();
+    if (!empty($user_row)) {
+        wp_logout();
+    }
 }
 
 function login_wp($username, $password)
