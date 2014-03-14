@@ -5,9 +5,8 @@ if (!defined('IN_PHPBB'))
 {
     exit;
 }
-require_once 'auth_wp_config.php';
-
 global $wp_object_cache, $wpdb, $table_prefix, $hasher;
+require_once 'auth_wp_config.php';
 
 require_once ABSPATH.'wp-includes/default-constants.php';
 require_once ABSPATH.'wp-includes/plugin.php';
@@ -818,7 +817,6 @@ if (!function_exists('wp_signon')) {
     }
 }
 
-$table_prefix  = 'wp_';
 $wp_object_cache= new WP_Object_Cache();
 $wpdb = new wpdb( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST );
 wp_set_wpdb_vars();
